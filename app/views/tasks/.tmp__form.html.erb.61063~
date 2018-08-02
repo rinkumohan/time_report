@@ -1,0 +1,12 @@
+<div class="form-style">
+	<div class="page-form">
+		<div class="row"><%= form.text_field :name, class: "form-control", placeholder: "Name(can't be blank)" %></div>
+		<div class="row"><%= form.text_field :description, class: "form-control", placeholder: "Description" %></div>
+		<div class="row"><%= form.text_field :time_taken, class: "form-control", placeholder: "Time taken" %></div>
+		<div class="row"><%= form.text_field :date, class: "form-control datepicker", placeholder: "Date",value: @task.date && @task.try(:date).strftime("%m-%d-%Y") %></div>
+		<div class="row">
+			<%= form.submit "Submit", :class=>"btn btn-warning" %>
+			<%=link_to tasks_path do %><span class="btn btn-warning" style="margin-left: 10px;">Cancel</span><%end%>
+		</div>
+	</div>
+</div>

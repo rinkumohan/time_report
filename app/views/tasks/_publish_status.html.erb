@@ -1,0 +1,9 @@
+<% if book.publish_status %>
+	<%=link_to publish_book_book_path(id: book.id, status: false), method: :patch, remote: true do%>
+		<span class="status_false">Withhold</span>
+	<%end%>
+<%else%>
+	<%=link_to publish_book_book_path(id: book.id, status: true), method: :patch, remote: true do%>
+		<span class="status_true">Publish</span>
+	<%end%>
+<%end%>

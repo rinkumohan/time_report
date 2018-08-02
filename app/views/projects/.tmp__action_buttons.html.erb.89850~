@@ -1,0 +1,9 @@
+<%=link_to edit_book_path(book.id) do%>
+	<span class="fa fa-edit edit_icon"></span>
+<%end%>
+<%=link_to book_path(book.id), remote: true do%>
+	<span class="fa fa-search view_icon"></span>
+<%end%>
+<%=link_to book_path(book.id), method: :delete do%>
+	<span class="fa fa-trash delete_icon"></span>
+<%end%>

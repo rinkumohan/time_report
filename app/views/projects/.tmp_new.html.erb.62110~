@@ -1,0 +1,8 @@
+<div class="breadcrumbs" style="background:#6f5b92;color:#FFF;">
+	<span class="fa fa-home"></span> / Books / <span class="active">New</span>
+</div>
+<div>
+	<%= form_with model: @book do |form|%>
+		<%= render "form", form: form%>
+	<%end%>
+</div>

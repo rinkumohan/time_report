@@ -1,0 +1,36 @@
+<%if !@tasks.blank?%>
+	<table class="table table-bordered table-striped table-condensed cf">
+		<thead class="cf">
+		  <tr style="width:100%;">
+			<th>Project Name</th>
+			<th>Task Description</th>
+		    <th>Task Name</th>
+			<th>Time Taken</th>
+			<th>Date</th>
+		  </tr>
+		</thead>
+	    <tbody>
+	        <%@tasks.each_with_index do |task| %>
+	        <tr>
+	        	<td>
+	        	  <%=task.find_proj_name(task.project_id)%>	
+				</td>
+				<td>
+				  <%=task.name%>
+				</td>
+				<td>
+					<%=task.description%>
+				</td>
+				<td>
+				   <%=task.time_taken%>
+				</td>
+				<td>
+				   <%=task.date.strftime("%m-%d-%Y") if task.date%>
+				</td>	
+	        </tr>
+	        <%end %>
+	    </tbody>
+	</table>
+<%else%>
+	<div class="noRecords"><span class="fa fa-info-circle"></span> No Tasks Found</div>
+<%end%>	

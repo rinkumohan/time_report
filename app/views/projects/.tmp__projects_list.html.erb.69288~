@@ -1,0 +1,40 @@
+<div class="book_view_header">
+	<span class="header">Actions</span>
+	<span class="header sort_list book_name" data-sort-obj="book_name" data-sort-order="ASC" title="Click to sort">
+		<span>Book Name</span>
+		<span class="sort_arrow"></span>
+	</span>
+	<span class="header sort_list author" data-sort-obj="author" data-sort-order="ASC" title="Click to sort">
+		<span>Author</span>
+		<span class="sort_arrow"></span>
+	</span>
+	<span class="header sort_list isbn" data-sort-obj="isbn" data-sort-order="ASC" title="Click to sort">
+		<span>ISBN</span>
+		<span class="sort_arrow"></span>
+	</span>
+	<span class="header sort_list price" data-sort-obj="price" data-sort-order="ASC" title="Click to sort">
+		<span>Price</span>
+		<span class="sort_arrow"></span>
+	</span>
+	<span class="header sort_list category" data-sort-obj="category" data-sort-order="ASC" title="Click to sort">
+		<span>Category</span>
+		<span class="sort_arrow"></span>
+	</span>
+	<span class="header sort_list publish_status" data-sort-obj="publish_status" data-sort-order="DESC" title="Click to sort">
+		<span>Publish / Withhold</span>
+		<span class="sort_arrow"></span>
+	</span>
+</div>
+<%@books.each_with_index do |book,index|%>
+	<div class="book_view_contents">
+		<span class="content"><%=render 'action_buttons', book: book%></span>
+		<span class="content" style="width: 24%"><%=book.book_name %></span>
+		<span class="content"><%=book.author %></span>
+		<span class="content"><%=book.isbn%></span>
+		<span class="content">Rs. <%=book.price%></span>
+		<span class="content"><%=book.category%></span>
+		<span class="content publish_book book_<%=book.id%>" title="Click to publish the book">
+			<%=render 'publish_status', book: book%>
+		</span>
+	</div>
+<%end%>

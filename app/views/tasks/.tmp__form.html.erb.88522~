@@ -1,0 +1,17 @@
+<div class="form-style">
+	<div class="page-form">
+		<div class="row"><%= form.text_field :name, class: "form-control", placeholder: "Name(can't be blank)" %></div>
+		<div class="row"><%= form.text_field :description, class: "form-control", placeholder: "Description" %></div>
+		<div class="row"><%= form.text_field :time_taken, class: "form-control", placeholder: "Description" %></div>
+		<div class="row"><%= form.text_field :date, class: "form-control",:id => "datepicker", placeholder: "Date",:value=> @task.date && @task.try(:date).strftime("%m-%d-%Y") %></div>
+		<%= form.hidden_field :project_id, :value => @project.id%>
+		<div class="row">
+			<%= form.submit "Submit", :class=>"btn btn-warning" %>
+			<%=link_to tasks_path(proj_id: @project.id) do %><span class="btn btn-warning" style="margin-left: 10px;">Cancel</span><%end%>
+		</div>
+	</div>
+</div>
+
+<script>
+  $('#datepicker').datepicker({format: 'yyyy-mm-dd'});
+</script>	

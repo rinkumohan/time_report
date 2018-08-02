@@ -1,0 +1,11 @@
+<div class="form-style">
+	<div class="page-form">
+		<div class="row"><%= form.text_field :name, class: "form-control", placeholder: "Name" %></div>
+		<div class="row"><%= form.text_field :description, class: "form-control", placeholder: "Description" %></div>
+		<div class="row">
+			<%= form.submit "Submit", :class=>"btn btn-warning" %>
+			<%=link_to projects_path do %><span class="btn btn-warning" style="margin-left: 10px;">Cancel</span><%end%>
+		</div>
+	</div>
+</div>
+

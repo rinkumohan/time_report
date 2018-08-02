@@ -1,0 +1,34 @@
+<div class="col-12 show_header">
+	<span class="header_style">Header</span>
+	<span class="close_window">X</span>
+</div>
+<div class="col-12">
+	<div class="col-lg-4 left_sec" style="float: left;">
+  		<span class="book_cover">
+  			<%= (!@book.blank? && !@book.book_cover.blank?) ? image_tag(@book.book_cover_url) : image_tag("Silhouette.png")%>
+  		</span>
+	</div>
+	<div class="col-lg-8 right_sec">
+		<span class="details_sec">
+			<span class="name">Book Name : </span>
+			<span class="description"><%= @book.book_name %></span>
+		</span>
+		<span class="details_sec">
+			<span class="name">Author : </span>
+			<span class="description"><%= @book.author %></span>
+		</span>
+		<span class="details_sec">
+			<span class="name">ISBN : </span>
+			<span class="description"><%= @book.isbn %></span>
+		</span>
+		<span class="details_sec">
+			<span class="name">Price : </span>
+			<span class="description"><%= @book.price %></span>
+		</span>
+		<span class="details_sec">
+			<span class="name">Category : </span>
+			<span class="description"><%= @book.category %></span>
+		</span>
+	</div>
+	
+</div>

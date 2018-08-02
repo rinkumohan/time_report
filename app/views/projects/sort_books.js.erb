@@ -1,0 +1,4 @@
+$("#books_list").html("<%=escape_javascript(render("books_list"))%>");
+$(".sort_arrow").removeClass("<%=@arrow_class[0]%>")
+$(".<%=params[:sort_obj]%>").find('.sort_arrow').addClass("<%=@arrow_class[1]%>")
+$(".<%=params[:sort_obj]%>").data('sort-order',"<%=params[:sort_order]%>")

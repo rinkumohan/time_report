@@ -1,0 +1,16 @@
+<table class="table table-bordered table-striped table-condensed cf">
+    <%= render "projects/proj_table_header"%>
+    <tbody>
+        <%@projects.each_with_index do |project| %>
+        <tr>
+			<td>
+				<%=project.name%>
+			</td>
+			<td>
+				<%=project.description%>
+			</td>
+			<%= render "projects/action_buttons",project: project%>			
+        </tr>
+        <%end %>
+    </tbody>
+</table>

@@ -1,0 +1,8 @@
+<% if !@books.blank? %>
+	<div id="books_list" style="width:100%;float: left;">
+		<%= render "books_list"%>
+	</div>
+<%else%>
+	<div class="noRecords"><span class="fa fa-info-circle"></span> No Books Found</div>
+<%end%>
+

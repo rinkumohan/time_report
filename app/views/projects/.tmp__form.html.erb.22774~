@@ -1,0 +1,28 @@
+<div class="form-wrapper user_profile">
+	<div class="photo_section">
+	  	<div class="photo_display_sec">
+	  		<span id="target" class="image_div">
+	  			<%= (!@book.blank? && !@book.book_cover.blank?) ? image_tag(@book.book_cover_url(:thumb)) : image_tag("Silhouette.png")%>
+	  		</span>
+	  	</div>
+	  	<div id="photo_size_check" class="selectPhoto">                                    
+	   		<%= form.file_field :book_cover, :id=>"pictureInput", :class => "file_field_new file_field_class", :style =>"display:none;"  %>
+	      	<div class= "dropzone_class" id="dropzone" style="cursor:pointer;" onclick="attachment_input(this)" ondragover="allowDrop(event)" ondrop="drop(event)">
+	        	<span class="fa fa-upload upload_image" aria-hidden="true" id ="add_attachment_placeholder" ></span>
+	        	<input class="order_number detail_view_user upload_box" type="text" readonly="true" id="add_attachment_placeholder" placeholder="Upload Book Cover">
+	      	</div>
+	  	</div>
+  	</div>
+	<div class="page-form">
+		<div class="row"><%= form.text_field :book_name, class: "form-control", placeholder: "Book Name" %></div>
+		<div class="row"><%= form.text_field :author, class: "form-control", placeholder: "Author" %></div>
+		<div class="row"><%= form.text_field :isbn, class: "form-control", placeholder: "ISBN" %></div>
+		<div class="row"><%= form.number_field :price, class: "form-control", placeholder: "Price", step: :any %></div>
+		<div class="row"><%= form.text_field :category, class: "form-control", placeholder: "Category" %></div>
+		<div class="row">
+			<%= form.submit "Submit", :class=>"btn btn-warning" %>
+			<%=link_to books_path do %><span class="btn btn-warning" style="margin-left: 10px;">Cancel</span><%end%>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,21 @@
+wb = xlsx_package.workbook
+styles = wb.styles
+slight_green = styles.add_style :bg_color => "6ea487", :fg_color => "00"
+slight_gray = styles.add_style :bg_color => "dbd8d8", :fg_color => "00"
+
+wb.add_worksheet(name: "Timesheet Report") do |sheet|
+  sheet.add_row ["Project"], style: [slight_green]
+  sheet.add_row ["Id","Name","Description"], style: [slight_gray,slight_gray,slight_gray,slight_gray]
+  sheet.add_row [@project.id,@project.name,@project.description]
+  sheet.add_row
+  sheet.add_row ["Tasks"], style: [slight_green]
+  if !@tasks.blank?
+      sheet.add_row ["Id","Name","Description","Time Taken(in hours)","Date"], style: [slight_gray,slight_gray,slight_gray,slight_gray,slight_gray]
+	  @tasks.each do |task|
+	    sheet.add_row [task.id, task.name, task.description,task.time_taken,task.date]
+	  end
+  else
+   	sheet.add_row["No tasks Found"]
+  end  
+  sheet.column_widths *([25]*sheet.column_info.count)
+end

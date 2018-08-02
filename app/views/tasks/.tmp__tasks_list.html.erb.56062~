@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped table-condensed cf">
+    <%= render "task_table_header"%>
+    <tbody>
+        <%@tasks.each_with_index do |task| %>
+        <tr>
+			<td>
+				<%=task.name%>
+			</td>
+			<td>
+				<%=task.description%>
+			</td>
+			<td>
+			   <%=task.time_taken%>
+			</td>
+			<td>
+			   <%=task.date.strftime("%m-%d-%Y") if task.date%>
+			</td>
+			<%= render "action_buttons",task: task%>		
+        </tr>
+        <%end %>
+    </tbody>
+</table>

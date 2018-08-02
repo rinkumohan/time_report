@@ -1,0 +1,17 @@
+<div class="breadcrumbs breadcrumb_style">
+	<span class="fa fa-home"></span> /Project- <%=@project.name%>/<span class="active">Tasks</span>
+</div>
+
+<div class="nav">
+	<%= link_to "Add Tasks",new_task_path(proj_id: @project.id), :class => "btn rounded btn-primary"%>
+	<%= link_to "Excel", tasks_path(proj_id:@project.id, format: "xlsx"),:class=>"btn rounded btn-primary xl_report" %>
+</div>
+
+<% if !@tasks.blank? %>
+	<div id="projects_list" style="width:100%;float: left;">
+		<%= render "tasks_list"%>
+	</div>
+<%else%>
+	<div class="noRecords"><span class="fa fa-info-circle"></span> No Tasks Found</div>
+<%end%>
+

@@ -1,0 +1,15 @@
+<td>
+	<%=link_to edit_project_path(project.id) do%>
+		<span class="fa fa-edit edit_icon"></span>
+	<%end%>
+</td>
+<td>
+	<%=link_to project_path(project.id), method: :delete do%>
+		<span class="fa fa-trash delete_icon"></span>
+	<%end%>
+</td>
+<td>
+	<%=link_to tasks_path(proj_id: project.id) do%>
+		<span class="fa fa-search"></span>
+	<%end%>
+</td>	

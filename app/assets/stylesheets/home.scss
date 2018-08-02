@@ -1,0 +1,40 @@
+
+
+.text_align_center{text-align: center;width:100%;float:left;}
+.sign_in_page{background: #daebec;}
+.login_logout_details{float:left;width:100%;text-align:right;background:silver;padding: 10px;}
+.active{color:red;}
+.breadcrumb_style{background:#6ea487;color:#FFF;}
+.btn_style{text-align:right;color:white;}
+
+.form-style{float:left; width: 50%; margin-left: 25%; padding-top:20px;}
+
+.page-form
+{
+  float:left; width:100%;
+  .row{float:left; width: 100%; padding:10px 0 10px 0;}
+}
+
+
+.notification
+{
+  float:left; width: 90%; margin-left: 5%; color :#FFF; margin-top:20px; padding:10px 0 10px 0; 
+  
+  .icon{float:left; width: 5%; text-align:center;}
+  
+  .message{float:left; width: 89%; margin-left:1%;}
+  
+  .close_notice{float:right; width: 2%;color :#FFF; cursor:pointer;}
+}/*notification*/
+.error{background : #e91e63; }
+.success{background : #009688; }
+
+.input_box{margin-top:5px;font-size:12px;width:100%;text-align:left;}
+.rounded{margin-top:5px;margin-bottom:5px;margin-right:5px;}
+.input_box_style{width: 100%;padding: 8px;margin-top: 5px;margin-bottom: 12px;}
+.select_lbl{font-size:13px;font-weight:bold;}
+
+#task_project_id{float:left;width:100%;}
+
+.login_detail{float:left;text-align:left;color:#e3f65e;font-weight:bold;}
+

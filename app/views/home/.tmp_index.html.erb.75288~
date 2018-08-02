@@ -1,0 +1,6 @@
+
+<%if !@projects.blank?%>
+	<%= render "projects/projects_list"%>
+<%else%>	
+  <div class="noRecords"><span class="fa fa-info-circle"></span> No Projects Found</div>
+<%end%>

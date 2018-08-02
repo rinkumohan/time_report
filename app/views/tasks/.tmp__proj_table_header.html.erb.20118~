@@ -1,0 +1,9 @@
+<thead class="cf">
+  <tr style="width:100%;">
+  	<th>Name</th>
+	<th>Description</th>
+    <th>Edit</th>
+	<th>Delete</th>
+	<th>View Tasks</th>
+</tr>
+</thead>

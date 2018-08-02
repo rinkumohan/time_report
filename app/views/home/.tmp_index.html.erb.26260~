@@ -1,0 +1,9 @@
+<div class="breadcrumbs breadcrumb_style">
+	<span class="fa fa-home"></span> /<span class="active">My Tasks</span>
+</div>
+
+<%if !@tasks.blank?%>
+  <%= render "home_tasks_list"%>
+<%else%>	
+  <div class="noRecords"><span class="fa fa-info-circle"></span> No Projects Found</div>
+<%end%>

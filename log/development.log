@@ -1,0 +1,68 @@
+  [1m[35m (617.0ms)[0m  [1m[35mCREATE DATABASE "tt_app" ENCODING = 'utf8'[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "tt_app" ENCODING = 'utf8'[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4698593360598949770)[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-08-02 09:53:53.511894"], ["key", "environment"]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4698593360598949770)[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/bin/rake:23
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (31.0ms)[0m  [1m[35mALTER SEQUENCE users_id_seq RESTART WITH 1;[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@abc.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@abc.com"], ["encrypted_password", "$2a$11$1IEkqaMQmuDk0H/y.BDxMeQhGTz20K1X/6hstrPUjQC23zNfMqfBG"], ["created_at", "2018-08-02 09:54:18.101041"], ["updated_at", "2018-08-02 09:54:18.101041"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (9.7ms)[0m  [1m[35mALTER SEQUENCE projects_id_seq RESTART WITH 1;[0m
+  ↳ db/seeds.rb:24
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."name" = $1 AND "projects"."description" = $2 AND "projects"."user_id" = $3 LIMIT $4[0m  [["name", "project 1"], ["description", "project 1 description"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mProject Create (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "project 1"], ["description", "project 1 description"], ["user_id", 1], ["created_at", "2018-08-02 09:54:18.206720"], ["updated_at", "2018-08-02 09:54:18.206720"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."name" = $1 AND "projects"."description" = $2 AND "projects"."user_id" = $3 LIMIT $4[0m  [["name", "project 2"], ["description", "project 2 description"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mProject Create (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "project 2"], ["description", "project 2 description"], ["user_id", 1], ["created_at", "2018-08-02 09:54:18.223767"], ["updated_at", "2018-08-02 09:54:18.223767"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."name" = $1 AND "projects"."description" = $2 AND "projects"."user_id" = $3 LIMIT $4[0m  [["name", "project 3"], ["description", "project 3 description"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mProject Create (0.8ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "project 3"], ["description", "project 3 description"], ["user_id", 1], ["created_at", "2018-08-02 09:54:18.250147"], ["updated_at", "2018-08-02 09:54:18.250147"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26

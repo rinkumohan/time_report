@@ -1,0 +1,14 @@
+
+<%@projects.each_with_index do |project,index|%>
+	<div class="project_details">
+		<span class="project_name">
+			Name: <%=project.name%>
+		</span>	
+		<span class="project_desc">
+			Name: <%=project.description%>
+		</span>	
+		<span class="project_assigned">
+			Assigned User: <%=project.user_id%>
+		</span>	
+	</div>
+<%end%>

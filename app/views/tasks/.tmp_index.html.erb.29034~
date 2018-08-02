@@ -1,0 +1,16 @@
+<div class="breadcrumbs breadcrumb_style">
+	<span class="fa fa-home"></span> /Project/<span class="active">Tasks</span>
+</div>
+
+<div class="nav">
+	<%= link_to "Add Tasks", new_task_path%>
+</div>
+
+<% if !tasks.blank? %>
+	<div id="projects_list" style="width:100%;float: left;">
+		<%= render "tasks_list"%>
+	</div>
+<%else%>
+	<div class="noRecords"><span class="fa fa-info-circle"></span> No Tasks Found</div>
+<%end%>
+

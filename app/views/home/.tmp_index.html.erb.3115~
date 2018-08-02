@@ -1,0 +1,20 @@
+<div class="breadcrumbs breadcrumb_style">
+	<span class="fa fa-home"></span> /<span class="active">My Tasks</span>
+</div>
+
+<%=form_tag  root_path, method: :get, id: 'home_index_form' ,:class=>"basic-form no-padding"  do %>
+	<div class="col-md-3 col-sm-3">
+	    Project
+	    <div class="input_box">
+	        <%= select_tag(:project_id, options_from_collection_for_select(Project.all.order(:id), :id, :name,params[:project_id]), prompt: "all") %>
+	    </div>
+	</div>
+<%end%>	
+
+<%if !@tasks.blank?%>
+  <div class="index_list_page">
+  	<%= render "home_tasks_list"%>
+  </div>	
+<%else%>	
+  <div class="noRecords"><span class="fa fa-info-circle"></span> No Projects Found</div>
+<%end%>
