@@ -12,7 +12,7 @@ class Task < ApplicationRecord
     Project.find_by_id(id).name
   end
   
-  def self.find_user_tasks(tasks, id)
+  def self.find_user_tasks(tasks, id)  
     id.blank? ? tasks : tasks.under_project(id.to_i)
   end
   
