@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   def index
     @tasks = @project.tasks
     respond_to do |format|
-      format.html
+      format.html {@tasks = @tasks.paginate(:page => params[:page], :per_page => 2)}
       format.xlsx {render :xlsx => "index", :filename =>"timesheet_report_#{current_user.email}"}
     end  
   end

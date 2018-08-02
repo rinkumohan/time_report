@@ -19,7 +19,7 @@ gem 'jquery-rails'
 gem 'rubyzip', '>= 1.2.1'
 gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
 gem 'axlsx_rails'
-
+gem 'will_paginate', '~> 3.1.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -1,8 +1,15 @@
 class HomeController < ApplicationController
   
+  before_action :find_user_tasks, only: [:index]
+  
   def index
-    proj_id = params[:project_id].to_i
-    @tasks = Task.find_user_tasks(current_user,proj_id)
+    @tasks = Task.find_user_tasks(@tasks, params[:project_id])
   end
+  
+  private 
+  
+  def find_user_tasks
+    @tasks = current_user.try(:tasks)
+  end  
   
 end

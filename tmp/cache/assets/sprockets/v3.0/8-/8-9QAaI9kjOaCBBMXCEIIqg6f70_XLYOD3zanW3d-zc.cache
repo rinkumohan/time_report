@@ -1,0 +1,22 @@
+I"œ(function() {
+  var Home;
+
+  Home = (function() {
+    function Home() {}
+
+    Home._timer = null;
+
+    return Home;
+
+  })();
+
+  $(document).on('change', '#home_index_form select#project_id', function() {
+    var ur;
+    ur = new Home;
+    $('.index_list_page').html(' ');
+    $.get($("#home_index_form").prop('action'), $("#home_index_form").serialize(), null, "script");
+    return false;
+  });
+
+}).call(this);
+:ET

@@ -66,3 +66,1307 @@
   ↳ db/seeds.rb:26
   [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ db/seeds.rb:23
+Started GET "/" for 127.0.0.1 at 2018-08-02 16:26:30 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 61ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-02 16:26:30 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 1698ms (Views: 1694.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-08-02 16:26:40 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 169ms (Views: 166.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-02 16:26:56 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+IbsKU7DUCVcAh0ZpR8UWYksUcsLMwYLu3IXdiqwyG3BhEVLG1cLKx549u1jCu+x65fSaMwmjC/QvSVdfO6gRw==", "user"=>{"email"=>"rinku@gmail", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinku@gmail"], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "rinku@gmail"], ["encrypted_password", "$2a$11$Ki48zlR5SiX2N5PmuiXDMuMivyxaXnGpNsbPp9LJ9ac7WBfd2CeNW"], ["created_at", "2018-08-02 10:56:56.819076"], ["updated_at", "2018-08-02 10:56:56.819076"]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-08-02 10:56:56.835659"], ["last_sign_in_at", "2018-08-02 10:56:56.835659"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-08-02 10:56:56.837109"], ["id", 2]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 28.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-02 16:26:56 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  Rendered home/_home_tasks_list.html.erb (10.6ms)
+  Rendered home/index.html.erb within layouts/application (36.4ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 184ms (Views: 159.4ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 16:27:01 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.5ms)
+  Rendered projects/_action_buttons.html.erb (2.0ms)
+  Rendered projects/_action_buttons.html.erb (0.4ms)
+  Rendered projects/_action_buttons.html.erb (0.4ms)
+  Rendered projects/_projects_list.html.erb (7.9ms)
+  Rendered projects/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 166ms (Views: 156.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:27:06 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 154ms (Views: 139.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/new?project_id=1" for 127.0.0.1 at 2018-08-02 16:27:07 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/tasks/_form.html.erb:9
+  Rendered tasks/_form.html.erb (5.3ms)
+  Rendered tasks/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 158ms (Views: 139.6ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-08-02 16:27:14 +0530
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vd8q5AVRVkt9RKFPZWV6to9fKtwbj5XoEyRsxEC3cdnSJB8tRN8IjxtnkYvcRJVwiLczsyRPZtBK0LBQ4/6x/g==", "task"=>{"name"=>"fghgnm", "description"=>"fghnm", "time_taken"=>"6", "date"=>"2018-08-29", "project_id"=>"1"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "time_taken", "user_id", "project_id", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "fghgnm"], ["description", "fghnm"], ["time_taken", 6.0], ["user_id", 2], ["project_id", 1], ["date", "2018-08-29"], ["created_at", "2018-08-02 10:57:14.948832"], ["updated_at", "2018-08-02 10:57:14.948832"]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[35m (50.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:24
+Redirected to http://localhost:3000/tasks?project_id=1
+Completed 200 OK in 74ms (ActiveRecord: 52.3ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:27:15 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (1.7ms)
+  Rendered tasks/_action_buttons.html.erb (1.3ms)
+  Rendered tasks/_tasks_list.html.erb (6.8ms)
+  Rendered tasks/index.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 216ms (Views: 209.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks/new?project_id=1" for 127.0.0.1 at 2018-08-02 16:27:19 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/tasks/_form.html.erb:9
+  Rendered tasks/_form.html.erb (8.3ms)
+  Rendered tasks/new.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_top_bar.html.erb (1.2ms)
+Completed 200 OK in 209ms (Views: 203.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-08-02 16:27:28 +0530
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cbe8aBToWGgxZik9IUcbCg4W8OLxkMiCtlvs6CwHPz72TImhVWYGrFdFGfmYZvTMCf7pjc5QO7rvrzB8j07/GQ==", "task"=>{"name"=>"fgfg", "description"=>"3t5ty5", "time_taken"=>"6", "date"=>"2018-08-29", "project_id"=>"1"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "time_taken", "user_id", "project_id", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "fgfg"], ["description", "3t5ty5"], ["time_taken", 6.0], ["user_id", 2], ["project_id", 1], ["date", "2018-08-29"], ["created_at", "2018-08-02 10:57:28.923070"], ["updated_at", "2018-08-02 10:57:28.923070"]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[35m (39.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:24
+Redirected to http://localhost:3000/tasks?project_id=1
+Completed 200 OK in 54ms (ActiveRecord: 41.1ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:27:28 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (2.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.6ms)
+  Rendered tasks/_action_buttons.html.erb (1.7ms)
+  Rendered tasks/_action_buttons.html.erb (0.5ms)
+  Rendered tasks/_tasks_list.html.erb (6.2ms)
+  Rendered tasks/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 206ms (Views: 194.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:28:00 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (1.1ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  Rendered tasks/_tasks_list.html.erb (6.4ms)
+  Rendered tasks/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 198ms (Views: 190.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:29:18 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  Rendered tasks/_tasks_list.html.erb (11.6ms)
+  Rendered tasks/index.html.erb within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed56212cd0>):
+    21: 			<%= render "action_buttons",task: task%>		
+    22:         </tr>
+    23:         <%end %>
+    24: 		<%= will_paginate @tasks %>
+    25:     </tbody>
+    26: </table>
+  
+app/views/tasks/_tasks_list.html.erb:24:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328673298460'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328673376260'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:30:15 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  Rendered tasks/_tasks_list.html.erb (10.4ms)
+  Rendered tasks/index.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 15.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed5853a708>):
+    21: 			<%= render "action_buttons",task: task%>		
+    22:         </tr>
+    23:         <%end %>
+    24: 		<%= will_paginate @tasks %>
+    25:     </tbody>
+    26: </table>
+  
+app/views/tasks/_tasks_list.html.erb:24:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328673605220'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328682857000'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:30:17 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.8ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  Rendered tasks/_tasks_list.html.erb (6.6ms)
+  Rendered tasks/index.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed584790f8>):
+    21: 			<%= render "action_buttons",task: task%>		
+    22:         </tr>
+    23:         <%end %>
+    24: 		<%= will_paginate @tasks %>
+    25:     </tbody>
+    26: </table>
+  
+app/views/tasks/_tasks_list.html.erb:24:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328749596500'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328684154520'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:31:27 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  Rendered tasks/_tasks_list.html.erb (7.6ms)
+  Rendered tasks/index.html.erb within layouts/application (11.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed58c9c960>):
+    23:         <%end %>
+    24:     </tbody>
+    25: </table>
+    26: <%= will_paginate @tasks %>
+  
+app/views/tasks/_tasks_list.html.erb:26:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328686424980'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328686758700'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:31:28 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  Rendered tasks/_tasks_list.html.erb (7.0ms)
+  Rendered tasks/index.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed589893e0>):
+    23:         <%end %>
+    24:     </tbody>
+    25: </table>
+    26: <%= will_paginate @tasks %>
+  
+app/views/tasks/_tasks_list.html.erb:26:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328685074560'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328685154000'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:33:32 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  Rendered tasks/_tasks_list.html.erb (9.4ms)
+  Rendered tasks/index.html.erb within layouts/application (27.9ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 14.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x000000051d01f0>):
+    23:         <%end %>
+    24:     </tbody>
+    25: </table>
+    26: <%= will_paginate @tasks %>
+  
+app/views/tasks/_tasks_list.html.erb:26:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_38250660'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_42767580'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:33:38 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  Rendered tasks/_tasks_list.html.erb (7.5ms)
+  Rendered tasks/index.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed590f4440>):
+    23:         <%end %>
+    24:     </tbody>
+    25: </table>
+    26: <%= will_paginate @tasks %>
+  
+app/views/tasks/_tasks_list.html.erb:26:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328581478680'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328688961680'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:33:40 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (1.0ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  Rendered tasks/_tasks_list.html.erb (7.4ms)
+  Rendered tasks/index.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fed605224c0>):
+    23:         <%end %>
+    24:     </tbody>
+    25: </table>
+    26: <%= will_paginate @tasks %>
+  
+app/views/tasks/_tasks_list.html.erb:26:in `_app_views_tasks__tasks_list_html_erb___3690822915393987254_70328749672480'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__3949225751327209479_70328749955280'
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 16:33:41 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (1.6ms)
+  Rendered projects/_action_buttons.html.erb (1.2ms)
+  Rendered projects/_action_buttons.html.erb (0.4ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_projects_list.html.erb (10.6ms)
+  Rendered projects/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 225ms (Views: 219.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 16:33:43 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (1.1ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_projects_list.html.erb (6.6ms)
+  Rendered projects/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 168ms (Views: 161.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 16:34:15 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (1.2ms)
+  Rendered projects/_action_buttons.html.erb (0.4ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_projects_list.html.erb (5.4ms)
+  Rendered projects/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 187ms (Views: 157.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 16:36:00 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (1.4ms)
+  Rendered projects/_action_buttons.html.erb (0.5ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_projects_list.html.erb (7.2ms)
+  Rendered projects/index.html.erb within layouts/application (22.0ms)
+  Rendered layouts/_top_bar.html.erb (2.1ms)
+Completed 200 OK in 1315ms (Views: 1253.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:36:11 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  Rendered tasks/_tasks_list.html.erb (10.7ms)
+  Rendered tasks/index.html.erb within layouts/application (33.9ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 12.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Task::ActiveRecord_Associations_CollectionProxy:0x007fc96c27d9d0>):
+    23:         <%end %>
+    24:     </tbody>
+    25: </table>
+    26: <%= will_paginate @tasks %>
+  
+app/views/tasks/_tasks_list.html.erb:26:in `_app_views_tasks__tasks_list_html_erb___193340134389683767_70251624272740'
+app/views/tasks/index.html.erb:12:in `_app_views_tasks_index_html_erb__4311575824133033962_70251630070500'
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:37:31 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  [1m[35m (20.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (37.3ms)
+  Rendered tasks/index.html.erb within layouts/application (56.6ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 286ms (Views: 201.9ms | ActiveRecord: 37.5ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:37:35 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (7.1ms)
+  Rendered tasks/index.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 168ms (Views: 159.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 16:37:38 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (9.0ms)
+  Rendered tasks/index.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_top_bar.html.erb (1.3ms)
+Completed 200 OK in 163ms (Views: 155.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:37:40 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (3.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (5.4ms)
+  Rendered tasks/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 158ms (Views: 148.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 16:37:42 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (1.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (10.0ms)
+  Rendered tasks/index.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 194ms (Views: 182.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:37:44 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (8.2ms)
+  Rendered tasks/index.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 198ms (Views: 189.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:37:56 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 191ms (Views: 143.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tasks/new?project_id=1" for 127.0.0.1 at 2018-08-02 16:38:03 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/new.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/tasks/_form.html.erb:9
+  Rendered tasks/_form.html.erb (21.7ms)
+  Rendered tasks/new.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 227ms (Views: 204.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-08-02 16:38:17 +0530
+Processing by TasksController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tPne6E7nGLhRk1c5zvmv7B1vS2T5HIHRMrBYcf8GCI8zAushD2lGfDewZ/132EAqGodSC8bcculrRITlXE/IqA==", "task"=>{"name"=>"ac", "description"=>"ff", "time_taken"=>"9", "date"=>"2018-08-29", "project_id"=>"1"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "time_taken", "user_id", "project_id", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "ac"], ["description", "ff"], ["time_taken", 9.0], ["user_id", 2], ["project_id", 1], ["date", "2018-08-29"], ["created_at", "2018-08-02 11:08:17.970906"], ["updated_at", "2018-08-02 11:08:17.970906"]]
+  ↳ app/controllers/tasks_controller.rb:24
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:24
+Redirected to http://localhost:3000/tasks?project_id=1
+Completed 200 OK in 43ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:38:18 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.2ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (10.2ms)
+  Rendered tasks/index.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 163ms (Views: 155.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:21 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.0ms)
+  Rendered tasks/_tasks_list.html.erb (7.6ms)
+  Rendered tasks/index.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 166ms (Views: 158.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:23 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.2ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (7.4ms)
+  Rendered tasks/index.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 152ms (Views: 144.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:25 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (2.2ms)
+  Rendered tasks/_tasks_list.html.erb (6.5ms)
+  Rendered tasks/index.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 152ms (Views: 139.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:26 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (0.8ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (19.6ms)
+  Rendered tasks/index.html.erb within layouts/application (23.6ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 188ms (Views: 176.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/tasks.xlsx?project_id=1" for 127.0.0.1 at 2018-08-02 16:38:29 +0530
+Processing by TasksController#index as XLSX
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.xlsx.axlsx
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.xlsx.axlsx:12
+  Rendered tasks/index.xlsx.axlsx (72.2ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data timesheet_report_rinku@gmail.xlsx (7.5ms)
+Completed 200 OK in 86ms (Views: 81.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:47 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (3.7ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (1.6ms)
+  Rendered tasks/_action_buttons.html.erb (1.4ms)
+  Rendered tasks/_tasks_list.html.erb (15.0ms)
+  Rendered tasks/index.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 178ms (Views: 166.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 16:38:50 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (1.3ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_projects_list.html.erb (5.7ms)
+  Rendered projects/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 152ms (Views: 144.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 16:38:52 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (8.1ms)
+  Rendered tasks/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 168ms (Views: 161.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:55 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (4.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_tasks_list.html.erb (3.9ms)
+  Rendered tasks/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 165ms (Views: 152.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 16:38:57 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (1.0ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (6.6ms)
+  Rendered tasks/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 168ms (Views: 161.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 16:39:02 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (1.3ms)
+  Rendered tasks/_tasks_list.html.erb (8.0ms)
+  Rendered tasks/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 192ms (Views: 180.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 16:39:03 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (1.0ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (9.3ms)
+  Rendered tasks/index.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_top_bar.html.erb (1.2ms)
+Completed 200 OK in 205ms (Views: 196.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-02 16:41:44 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:10
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:10
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:10
+  Rendered home/_home_tasks_list.html.erb (9.4ms)
+  Rendered home/index.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 202ms (Views: 193.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-02 16:51:36 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (23.0ms)
+  Rendered home/index.html.erb within layouts/application (72.4ms)
+  Rendered layouts/_top_bar.html.erb (1.2ms)
+Completed 200 OK in 291ms (Views: 225.2ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=1&_=1533208897550" for 127.0.0.1 at 2018-08-02 16:51:39 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"1", "_"=>"1533208897550"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 1)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (6.3ms)
+  Rendered home/index.js.erb (12.2ms)
+Completed 200 OK in 34ms (Views: 22.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=2&_=1533208897551" for 127.0.0.1 at 2018-08-02 16:51:41 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"2", "_"=>"1533208897551"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 2)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  Rendered home/_home_tasks_list.html.erb (2.6ms)
+  Rendered home/index.js.erb (7.7ms)
+Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=3&_=1533208897552" for 127.0.0.1 at 2018-08-02 16:51:43 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"3", "_"=>"1533208897552"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 3)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  Rendered home/_home_tasks_list.html.erb (2.2ms)
+  Rendered home/index.js.erb (7.1ms)
+Completed 200 OK in 23ms (Views: 14.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=&_=1533208897553" for 127.0.0.1 at 2018-08-02 16:51:45 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"", "_"=>"1533208897553"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (7.5ms)
+  Rendered home/index.js.erb (12.8ms)
+Completed 200 OK in 28ms (Views: 19.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-02 17:01:33 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (26.1ms)
+  Rendered home/index.html.erb within layouts/application (47.3ms)
+  Rendered layouts/_top_bar.html.erb (1.2ms)
+Completed 200 OK in 229ms (Views: 177.0ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=2&_=1533209494970" for 127.0.0.1 at 2018-08-02 17:01:36 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"2", "_"=>"1533209494970"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 2)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  Rendered home/_home_tasks_list.html.erb (2.7ms)
+  Rendered home/index.js.erb (7.6ms)
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=1&_=1533209494971" for 127.0.0.1 at 2018-08-02 17:01:38 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"1", "_"=>"1533209494971"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 1)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (5.6ms)
+  Rendered home/index.js.erb (10.6ms)
+Completed 200 OK in 28ms (Views: 17.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=3&_=1533209494972" for 127.0.0.1 at 2018-08-02 17:01:39 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"3", "_"=>"1533209494972"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 3)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  Rendered home/_home_tasks_list.html.erb (2.3ms)
+  Rendered home/index.js.erb (7.1ms)
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 17:02:59 +0530
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (1.5ms)
+  Rendered projects/_action_buttons.html.erb (0.4ms)
+  Rendered projects/_action_buttons.html.erb (0.3ms)
+  Rendered projects/_projects_list.html.erb (6.1ms)
+  Rendered projects/index.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_top_bar.html.erb (2.2ms)
+Completed 200 OK in 1343ms (Views: 1284.2ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-08-02 17:03:59 +0530
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:9
+  Rendered projects/_proj_table_header.html.erb (0.3ms)
+  Rendered projects/_action_buttons.html.erb (1.1ms)
+  Rendered projects/_action_buttons.html.erb (0.4ms)
+  Rendered projects/_action_buttons.html.erb (0.5ms)
+  Rendered projects/_projects_list.html.erb (5.2ms)
+  Rendered projects/index.html.erb within layouts/application (18.5ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 195ms (Views: 161.2ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/tasks?project_id=1" for 127.0.0.1 at 2018-08-02 17:05:10 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.4ms)
+  Rendered tasks/_action_buttons.html.erb (1.0ms)
+  Rendered tasks/_action_buttons.html.erb (0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (15.2ms)
+  Rendered tasks/index.html.erb within layouts/application (39.2ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 225ms (Views: 174.2ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/tasks?page=2&project_id=1" for 127.0.0.1 at 2018-08-02 17:05:12 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"2", "project_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (2.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 2]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_tasks_list.html.erb (5.9ms)
+  Rendered tasks/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_top_bar.html.erb (0.9ms)
+Completed 200 OK in 154ms (Views: 144.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/tasks?page=1&project_id=1" for 127.0.0.1 at 2018-08-02 17:05:14 +0530
+Processing by TasksController#index as HTML
+  Parameters: {"page"=>"1", "project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2 OFFSET $3[0m  [["project_id", 1], ["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:10
+  Rendered tasks/_task_table_header.html.erb (0.3ms)
+  Rendered tasks/_action_buttons.html.erb (0.9ms)
+  Rendered tasks/_action_buttons.html.erb (0.3ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/_tasks_list.html.erb:26
+  Rendered tasks/_tasks_list.html.erb (11.3ms)
+  Rendered tasks/index.html.erb within layouts/application (17.1ms)
+  Rendered layouts/_top_bar.html.erb (1.0ms)
+Completed 200 OK in 161ms (Views: 151.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/tasks.xlsx?project_id=1" for 127.0.0.1 at 2018-08-02 17:05:16 +0530
+Processing by TasksController#index as XLSX
+  Parameters: {"project_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:58
+  Rendering tasks/index.xlsx.axlsx
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/views/tasks/index.xlsx.axlsx:12
+  Rendered tasks/index.xlsx.axlsx (37.5ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data timesheet_report_rinku@gmail.xlsx (11.8ms)
+Completed 200 OK in 58ms (Views: 50.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-02 17:05:31 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" ASC[0m
+  ↳ app/views/home/index.html.erb:11
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (11.0ms)
+  Rendered home/index.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_top_bar.html.erb (1.1ms)
+Completed 200 OK in 223ms (Views: 209.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=1&_=1533209640887" for 127.0.0.1 at 2018-08-02 17:05:34 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"1", "_"=>"1533209640887"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 1)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/task.rb:12
+  Rendered home/_home_tasks_list.html.erb (8.0ms)
+  Rendered home/index.js.erb (13.5ms)
+Completed 200 OK in 30ms (Views: 19.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/?utf8=%E2%9C%93&project_id=2&_=1533209640888" for 127.0.0.1 at 2018-08-02 17:05:36 +0530
+Processing by HomeController#index as JS
+  Parameters: {"utf8"=>"✓", "project_id"=>"2", "_"=>"1533209640888"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/rinku/.rvm/gems/ruby-2.2.2@time_report/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.js.erb
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND (project_id = 2)[0m  [["user_id", 2]]
+  ↳ app/views/home/_home_tasks_list.html.erb:1
+  Rendered home/_home_tasks_list.html.erb (2.8ms)
+  Rendered home/index.js.erb (7.7ms)
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 1.0ms)
+
+
